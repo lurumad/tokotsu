@@ -2,6 +2,8 @@ name: ci
 
 env:
   NODE_VERSION: '14.x'
+  WEBAPP_NAME: tonkotsu
+  WEBAPP_PACKAGE_PATH: '.'
 
 on:
   push:
@@ -38,4 +40,18 @@ jobs:
       - 
         name: Codecov
         uses: codecov/codecov-action@v1.5.0
-        
+  deploy:
+    name: cd
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      -
+        name: Deploy to WebApp Staging
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.WEBAPP_NAME }}
+          publish-profile: ${{ secrets.WEBAPP_PUBLISH_PROFILE_STAGING }}
+          package: ${{ WEBAPP_PACKAGE_PATH }}
+      
+    
