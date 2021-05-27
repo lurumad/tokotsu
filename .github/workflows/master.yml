@@ -54,9 +54,9 @@ jobs:
   build-and-deploy-production:
     name: Build and deploy Tonkotsu in Production
     runs-on: ubuntu-latest
-	if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-	environment: production
-	steps:
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+    environment: production
+    steps:
       -
         uses: actions/checkout@v2
       -
