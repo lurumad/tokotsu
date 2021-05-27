@@ -32,7 +32,10 @@ jobs:
       -
         name: Test
         run: npm run test --if-present
-      
       -
         name: Test coverge
         run: npm run report-coverage
+      - 
+        name: Codecov
+        uses: codecov/codecov-action@v1.5.0
+        
