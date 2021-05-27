@@ -2,7 +2,7 @@ name: ci
 
 env:
   NODE_VERSION: '14.x'
-  WEBAPP_NAME: tonkotsu
+  WEBAPP_NAME: tonkotsu2
   WEBAPP_PACKAGE_PATH: '.'
 
 on:
