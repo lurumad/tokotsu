@@ -47,6 +47,8 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       -
+        uses: actions/checkout@v2
+      -
         name: Deploy to WebApp Staging
         uses: azure/webapps-deploy@v2
         with:
