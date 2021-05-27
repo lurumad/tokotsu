@@ -39,3 +39,6 @@ npm start
 ```
 
 Follow the coach instructions and good luck!
+
+## Upload the coverage report into [Codecov](https://about.codecov.io/)
+Workflow is calling codecov action that upload the coverage from every pull request to codecov platform
